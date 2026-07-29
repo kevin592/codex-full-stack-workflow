@@ -60,7 +60,7 @@ Requirements:
 
 ```bash
 git clone https://github.com/kevin592/codex-full-stack-workflow.git
-cd codex-full-stack-workflow/plugins/full-stack-development/mcp-server
+cd codex-full-stack-workflow/mcp-server
 npm ci
 npm test
 ```
@@ -84,13 +84,13 @@ npm start
 
 ```text
 .agents/plugins/marketplace.json        Git-backed Codex marketplace
-plugins/full-stack-development/
-  .codex-plugin/plugin.json             Plugin manifest
-  .mcp.json                             MCP server registration
-  skills/                               Workflow skills and references
-  mcp-server/src/                       MCP tools and workflow contracts
-  mcp-server/test/                      Automated test suite
-  scripts/                              Validation and documentation sync
+.codex-plugin/plugin.json               Plugin manifest
+.mcp.json                               MCP server registration
+assets/                                 Marketplace artwork
+skills/                                 Workflow skills and references
+mcp-server/src/                         MCP tools and workflow contracts
+mcp-server/test/                        Automated test suite
+scripts/                                Validation and documentation sync
 docs/                                   Example generated requirement artifacts
 ```
 

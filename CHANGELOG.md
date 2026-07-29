@@ -4,6 +4,14 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-07-30
+
+### Changed
+
+- Moved the installable plugin to the repository root for direct marketplace and scanner compatibility
+- Added a plugin icon and mandatory HOL Plugin Scanner CI gate
+- Pinned GitHub Actions to reviewed commit SHAs
+
 ## [0.1.0] - 2026-07-30
 
 ### Added
@@ -19,5 +27,6 @@ All notable changes to this project are documented here.
 - 91 automated tests
 - Git-backed Codex marketplace packaging
 
-[Unreleased]: https://github.com/kevin592/codex-full-stack-workflow/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/kevin592/codex-full-stack-workflow/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/kevin592/codex-full-stack-workflow/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/kevin592/codex-full-stack-workflow/releases/tag/v0.1.0

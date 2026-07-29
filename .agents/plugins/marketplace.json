@@ -8,7 +8,7 @@
       "name": "full-stack-development",
       "source": {
         "source": "local",
-        "path": "./plugins/full-stack-development"
+        "path": "./"
       },
       "policy": {
         "installation": "AVAILABLE",
