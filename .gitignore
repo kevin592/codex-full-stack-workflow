@@ -1,2 +1,4 @@
 node_modules/
-plugins/full-stack-development/mcp-server/node_modules/
+mcp-server/node_modules/
+.scanner-venv/
+.hol-plugin-scanner-dist/

@@ -10,6 +10,6 @@ Documentation: https://www.heroui.com/docs/react
 The snapshot manifest records source URLs, generation metadata, and SHA-256
 hashes at:
 
-plugins/full-stack-development/skills/hero-ui-craft/references/official/react/manifest.json
+skills/hero-ui-craft/references/official/react/manifest.json
 
 Third-party names and trademarks belong to their respective owners.

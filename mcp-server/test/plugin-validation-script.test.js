@@ -16,5 +16,5 @@ test("validate-plugin script locates the system plugin validator", () => {
 
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /validator=(?:.*validate_plugin\.py|unavailable)/);
-  assert.match(result.stdout, /full-stack-development/);
+  assert.match(result.stdout, /plugin=.+/);
 });

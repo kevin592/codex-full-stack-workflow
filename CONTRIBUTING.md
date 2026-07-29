@@ -13,7 +13,7 @@ Thank you for helping improve Codex Full-Stack Workflow.
 ## Development
 
 ```bash
-cd plugins/full-stack-development/mcp-server
+cd mcp-server
 npm ci
 npm test
 npm audit --omit=dev --audit-level=high

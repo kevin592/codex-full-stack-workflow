@@ -1,6 +1,6 @@
 {
   "name": "full-stack-development",
-  "version": "0.1.0+codex.20260707023956",
+  "version": "0.1.1",
   "description": "A Codex full-stack development workflow for project-fixed requirements, stage gates, backend/frontend planning, HeroUI front ends, implementation, and verification.",
   "author": {
     "name": "kevin592",
@@ -29,6 +29,8 @@
       "Analyze",
       "Generate"
     ],
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg",
     "defaultPrompt": [
       "Use \u5168\u6808\u5f00\u53d1 to clarify and plan this product before implementation.",
       "Create the fixed full-stack requirement workspace for this feature.",
