@@ -1,0 +1,15 @@
+Codex Full-Stack Workflow
+Copyright 2026 kevin592
+
+This product includes snapshots of HeroUI React documentation retrieved from
+official HeroUI sources. HeroUI is licensed under the Apache License 2.0.
+
+Project: https://github.com/heroui-inc/heroui
+Documentation: https://www.heroui.com/docs/react
+
+The snapshot manifest records source URLs, generation metadata, and SHA-256
+hashes at:
+
+plugins/full-stack-development/skills/hero-ui-craft/references/official/react/manifest.json
+
+Third-party names and trademarks belong to their respective owners.
