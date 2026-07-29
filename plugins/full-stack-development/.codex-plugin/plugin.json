@@ -3,14 +3,26 @@
   "version": "0.1.0+codex.20260707023956",
   "description": "A Codex full-stack development workflow for project-fixed requirements, stage gates, backend/frontend planning, HeroUI front ends, implementation, and verification.",
   "author": {
-    "name": "Local developer"
+    "name": "kevin592",
+    "url": "https://github.com/kevin592"
   },
+  "homepage": "https://github.com/kevin592/codex-full-stack-workflow",
+  "repository": "https://github.com/kevin592/codex-full-stack-workflow",
+  "license": "Apache-2.0",
+  "keywords": [
+    "codex",
+    "full-stack",
+    "requirements",
+    "mcp",
+    "quality-gates",
+    "heroui"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "\u5168\u6808\u5f00\u53d1",
     "shortDescription": "Create fixed full-stack requirement workspaces and gated HeroUI front ends.",
     "longDescription": "Adds a reusable Codex full-stack workflow with a top-level Skill, local MCP tools, and the official HeroUI React MCP server. It requires a fixed project requirement workspace, stage tracking, requirement-change regression, backend/frontend contracts, official HeroUI component mapping, Pencil or Figma component-detail images, and user approval before front-end implementation.",
-    "developerName": "Local developer",
+    "developerName": "kevin592",
     "category": "Developer Tools",
     "capabilities": [
       "Read",

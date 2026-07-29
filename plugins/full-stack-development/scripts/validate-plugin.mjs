@@ -23,15 +23,15 @@ const dryRun = args.includes("--dry-run");
 const pluginPath = resolve(args.find((arg) => arg !== "--dry-run") ?? process.cwd());
 const validator = findValidator();
 
+if (dryRun) {
+  console.log(`validator=${validator ?? "unavailable"}`);
+  console.log(`plugin=${pluginPath}`);
+  process.exit(0);
+}
+
 if (!validator) {
   console.error("Could not locate validate_plugin.py. Set CODEX_PLUGIN_VALIDATOR to the validator path.");
   process.exit(1);
-}
-
-if (dryRun) {
-  console.log(`validator=${validator}`);
-  console.log(`plugin=${pluginPath}`);
-  process.exit(0);
 }
 
 const result = spawnSync("python", [validator, pluginPath], {

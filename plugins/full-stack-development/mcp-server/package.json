@@ -2,6 +2,17 @@
   "name": "full-stack-development-mcp",
   "version": "0.1.0",
   "private": true,
+  "description": "Local MCP server for the Codex Full-Stack Workflow plugin.",
+  "author": "kevin592",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevin592/codex-full-stack-workflow.git",
+    "directory": "plugins/full-stack-development/mcp-server"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "type": "module",
   "bin": {
     "full-stack-development-mcp": "./src/index.js"
