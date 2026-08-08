@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/kevin592/codex-full-stack-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/kevin592/codex-full-stack-workflow/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Awesome Codex Plugins](https://img.shields.io/badge/listed-Awesome%20Codex%20Plugins-7c3aed.svg)](https://github.com/hashgraph-online/awesome-codex-plugins)
 
 An open-source Codex plugin that turns rough product requests into staged,
 reviewable full-stack delivery.
@@ -24,8 +25,9 @@ affected stages, and completion requires test and review evidence.
 - HeroUI React component mapping and official documentation snapshots
 - Desktop/mobile visual-evidence checks
 - Backend contract, code-review, and completion audits
+- Evidence-backed OSS issue triage, security remediation, PR review, and release gates
 - A local MCP server exposing the workflow as structured tools
-- 91 automated tests covering unit, contract, pressure, and end-to-end scenarios
+- 97 automated tests covering unit, contract, pressure, and end-to-end scenarios
 
 ## Install in Codex
 
@@ -49,6 +51,23 @@ You can inspect installed plugins with:
 ```bash
 codex plugin list --json
 ```
+
+## 60-second OSS maintainer demo
+
+Start a Codex conversation in a public repository and try:
+
+```text
+Use oss-maintainer-workflow to plan the smallest meaningful maintenance cycle
+for this repository. Inspect real issues, pull requests, CI, releases, and the
+dependency audit. Do not invent adoption signals. Block release until tests,
+security, documentation, changelog, and review evidence pass.
+```
+
+The workflow calls `plan_oss_maintenance_cycle` to create a source-linked
+maintenance plan, then `review_oss_release_readiness` before a tag is
+published. See the plugin's own
+[v0.1.2 maintenance cycle](docs/oss-maintenance/v0.1.2/) for a reproducible,
+honest example.
 
 ## Develop locally
 
@@ -92,6 +111,7 @@ mcp-server/src/                         MCP tools and workflow contracts
 mcp-server/test/                        Automated test suite
 scripts/                                Validation and documentation sync
 docs/                                   Example generated requirement artifacts
+docs/oss-maintenance/                   Source-linked maintenance and release evidence
 ```
 
 ## Maintenance
@@ -103,6 +123,10 @@ before proposing a change. Security reports should follow
 The bundled HeroUI documentation snapshot is traceable through a generated
 manifest containing source URLs and SHA-256 hashes. See
 [NOTICE](NOTICE) for third-party attribution.
+
+The plugin is listed in
+[Awesome Codex Plugins](https://github.com/hashgraph-online/awesome-codex-plugins)
+through [PR #337](https://github.com/hashgraph-online/awesome-codex-plugins/pull/337).
 
 ## License
 
