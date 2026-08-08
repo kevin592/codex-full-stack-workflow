@@ -1,6 +1,6 @@
 {
   "name": "full-stack-development-mcp",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "description": "Local MCP server for the Codex Full-Stack Workflow plugin.",
   "author": "kevin592",

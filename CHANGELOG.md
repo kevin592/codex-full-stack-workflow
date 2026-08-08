@@ -4,6 +4,18 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-08-08
+
+### Added
+
+- Added the `oss-maintainer-workflow` skill and maintenance evidence contract
+- Added `plan_oss_maintenance_cycle` and `review_oss_release_readiness` MCP tools
+- Added a 60-second quickstart and a source-linked v0.1.2 maintenance example
+
+### Security
+
+- Updated vulnerable transitive dependencies identified by a fresh npm audit
+
 ## [0.1.1] - 2026-07-30
 
 ### Changed
@@ -27,6 +39,7 @@ All notable changes to this project are documented here.
 - 91 automated tests
 - Git-backed Codex marketplace packaging
 
-[Unreleased]: https://github.com/kevin592/codex-full-stack-workflow/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/kevin592/codex-full-stack-workflow/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/kevin592/codex-full-stack-workflow/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/kevin592/codex-full-stack-workflow/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/kevin592/codex-full-stack-workflow/releases/tag/v0.1.0

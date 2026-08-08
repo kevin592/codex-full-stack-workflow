@@ -51,6 +51,10 @@ import {
   reviewHeroUiDocsFreshness,
   reviewVisualInspectionMetrics
 } from "./quality-audits.js";
+import {
+  planOssMaintenanceCycle,
+  reviewOssReleaseReadiness
+} from "./oss-maintenance.js";
 
 const READ_ONLY_ANNOTATIONS = {
   readOnlyHint: true,
@@ -75,7 +79,7 @@ function jsonResult(summary, result) {
 
 const server = new McpServer({
   name: "full-stack-development",
-  version: "0.1.0"
+  version: "0.1.2"
 });
 
 server.registerTool(
@@ -794,6 +798,72 @@ server.registerTool(
     annotations: READ_ONLY_ANNOTATIONS
   },
   async (args) => jsonResult("Reviewed the implementation plan gate.", reviewImplementationPlan(args))
+);
+
+server.registerTool(
+  "plan_oss_maintenance_cycle",
+  {
+    title: "Plan OSS Maintenance Cycle",
+    description:
+      "Use this to turn public issues, pull requests, security findings, releases, and adoption signals into a small evidence-backed open-source maintenance cycle.",
+    inputSchema: {
+      repository: z.string().optional(),
+      cycle: z.string().optional(),
+      version: z.string().optional(),
+      goal: z.string().optional(),
+      outputRoot: z.string().optional(),
+      signals: z
+        .object({
+          criticalVulnerabilities: z.number().int().nonnegative().optional(),
+          highVulnerabilities: z.number().int().nonnegative().optional(),
+          openIssues: z.number().int().nonnegative().optional(),
+          openPullRequests: z.number().int().nonnegative().optional(),
+          userFeedbackCount: z.number().int().nonnegative().optional(),
+          externalListings: z.number().int().nonnegative().optional()
+        })
+        .optional()
+    },
+    annotations: READ_ONLY_ANNOTATIONS
+  },
+  async (args) => jsonResult("Planned an evidence-backed OSS maintenance cycle.", planOssMaintenanceCycle(args))
+);
+
+server.registerTool(
+  "review_oss_release_readiness",
+  {
+    title: "Review OSS Release Readiness",
+    description:
+      "Use this before an open-source release to block missing tests, security audit, documentation, changelog, pull request review, or change rationale.",
+    inputSchema: {
+      version: z.string().optional(),
+      repository: z
+        .object({
+          name: z.string().optional(),
+          public: z.boolean().optional(),
+          license: z.string().optional()
+        })
+        .optional(),
+      change: z
+        .object({
+          summary: z.string().optional(),
+          issueUrl: z.string().optional(),
+          rationale: z.string().optional()
+        })
+        .optional(),
+      evidence: z
+        .object({
+          tests: z.any().optional(),
+          securityAudit: z.any().optional(),
+          docs: z.any().optional(),
+          changelog: z.any().optional(),
+          pullRequest: z.any().optional(),
+          review: z.any().optional()
+        })
+        .optional()
+    },
+    annotations: READ_ONLY_ANNOTATIONS
+  },
+  async (args) => jsonResult("Reviewed OSS release readiness evidence.", reviewOssReleaseReadiness(args))
 );
 
 const transport = new StdioServerTransport();

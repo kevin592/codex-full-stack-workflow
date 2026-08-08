@@ -48,6 +48,7 @@ test("stdio MCP server exposes HeroUI craft tools", async (t) => {
     "plan_change_impact",
     "plan_frontend_requirement_pipeline",
     "plan_hero_ui_system",
+    "plan_oss_maintenance_cycle",
     "plan_requirement_change",
     "plan_superpowers_execution_handoff",
     "plan_tailwind_hero_ui_adoption",
@@ -63,6 +64,7 @@ test("stdio MCP server exposes HeroUI craft tools", async (t) => {
     "review_hero_ui_quality",
     "review_implementation_plan",
     "review_lifecycle_hook_coverage",
+    "review_oss_release_readiness",
     "review_requirement_workspace_stage",
     "review_stage_gate",
     "review_visual_design_orchestration",
@@ -473,4 +475,46 @@ test("stdio MCP server exposes HeroUI craft tools", async (t) => {
     }
   });
   assert.equal(lifecycleHook.structuredContent.result.status, "pass");
+
+  const maintenancePlan = await client.callTool({
+    name: "plan_oss_maintenance_cycle",
+    arguments: {
+      repository: "kevin592/codex-full-stack-workflow",
+      cycle: "v0.1.2",
+      signals: {
+        highVulnerabilities: 2,
+        externalListings: 1
+      }
+    }
+  });
+  assert.equal(maintenancePlan.structuredContent.result.status, "planned");
+  assert.equal(maintenancePlan.structuredContent.result.priorities[0].id, "security");
+
+  const releaseReadiness = await client.callTool({
+    name: "review_oss_release_readiness",
+    arguments: {
+      version: "0.1.2",
+      repository: {
+        name: "kevin592/codex-full-stack-workflow",
+        public: true,
+        license: "Apache-2.0"
+      },
+      change: {
+        summary: "Add an evidence-backed OSS maintainer workflow.",
+        rationale: "Public maintenance should be reproducible and reviewable."
+      },
+      evidence: {
+        tests: { passed: true },
+        securityAudit: { passed: true, critical: 0, high: 0 },
+        docs: { updated: true },
+        changelog: { updated: true },
+        pullRequest: {
+          url: "https://github.com/kevin592/codex-full-stack-workflow/pull/5",
+          reviewed: true
+        },
+        review: { blockingIssues: 0 }
+      }
+    }
+  });
+  assert.equal(releaseReadiness.structuredContent.result.status, "pass");
 });

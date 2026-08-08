@@ -119,3 +119,15 @@ test("requirement discovery owns one-line website and design draft entry before 
   assert.match(skill, /Do not offer a browser visual companion/i);
   assert.match(skill, /generate_requirement_workspace/i);
 });
+
+test("OSS maintainer workflow requires source-linked security review and release evidence", () => {
+  const skill = readSkill("oss-maintainer-workflow");
+
+  assert.match(skill, /Input Artifacts/i);
+  assert.match(skill, /Output Artifact/i);
+  assert.match(skill, /Required MCP Tool/i);
+  assert.match(skill, /plan_oss_maintenance_cycle/i);
+  assert.match(skill, /review_oss_release_readiness/i);
+  assert.match(skill, /No release with unresolved critical or high/i);
+  assert.match(skill, /Never fabricate/i);
+});
