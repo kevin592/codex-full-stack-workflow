@@ -1,6 +1,6 @@
 # v0.1.2 Release Readiness
 
-Status: in progress
+Status: pass
 
 ## Required evidence
 
@@ -17,6 +17,10 @@ Status: in progress
 - Changelog: updated
 - Pull request:
   [#5](https://github.com/kevin592/codex-full-stack-workflow/pull/5)
-- Remote CI and review: pending
+- [Remote CI and HOL Plugin Scanner](https://github.com/kevin592/codex-full-stack-workflow/pull/5/checks):
+  passed
+- Review: zero blocking findings
+- `review_oss_release_readiness`: `pass`
+- Next allowed action: `merge-tag-and-publish`
 
-The version must not be tagged while any pending item remains.
+No release blocker remains. Tagging is allowed after PR #5 is merged.

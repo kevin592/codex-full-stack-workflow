@@ -34,3 +34,7 @@ Pull request, remote CI, and review links are recorded in
 ## Pull request
 
 - [PR #5: Add OSS maintainer workflow](https://github.com/kevin592/codex-full-stack-workflow/pull/5)
+- [Current PR checks](https://github.com/kevin592/codex-full-stack-workflow/pull/5/checks):
+  CI and HOL Plugin Scanner passed
+- Review result: zero blocking findings
+- `review_oss_release_readiness`: `pass`
