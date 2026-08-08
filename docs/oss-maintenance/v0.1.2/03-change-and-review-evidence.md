@@ -30,3 +30,7 @@ node ./scripts/validate-plugin.mjs .
 
 Pull request, remote CI, and review links are recorded in
 [04-release-readiness.md](04-release-readiness.md) after remote checks complete.
+
+## Pull request
+
+- [PR #5: Add OSS maintainer workflow](https://github.com/kevin592/codex-full-stack-workflow/pull/5)

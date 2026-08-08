@@ -15,6 +15,8 @@ Status: in progress
 - Plugin validation: passed
 - Documentation: updated
 - Changelog: updated
-- Pull request, remote CI, and review: pending publication
+- Pull request:
+  [#5](https://github.com/kevin592/codex-full-stack-workflow/pull/5)
+- Remote CI and review: pending
 
 The version must not be tagged while any pending item remains.
